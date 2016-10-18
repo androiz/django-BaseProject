@@ -1,0 +1,71 @@
+section {
+    padding-top: 150px;
+}
+
+/* Sign Up */
+form[name='sign_up'] .control-group{
+    background-color: white;
+}
+
+/* Login */
+form[name='login'] .control-group{
+    background-color: white;
+}
+
+a#password_recovery{
+    /*color: white;*/
+    padding-top: 15px;
+    display: block;
+}
+
+/* My Account */
+#account .white-box{
+    color:#484848;
+}
+
+#account .panel-header {
+    background-color: #edefed;
+}
+
+#account .panel-header {
+    color: #484848;
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dce0e0;
+}
+
+#account .panel-header, .panel-body, ul.panel-body>li, ol.panel-body>li, .panel-footer {
+    position: relative;
+    margin: 0;
+    padding: 20px;
+    border-top: 1px solid #dce0e0;
+}
+
+#account .panel-header:first-child, .panel-body:first-child, ul.panel-body>li:first-child, ol.panel-body>li:first-child, .panel-footer:first-child {
+    border-top: 0;
+}
+
+#account .panel{
+    border:none;
+}
+
+#account .space-2 {
+    margin-bottom: 12px;
+}
+
+.media-photo-block{
+    max-height: 263px;
+    max-width: 263px;
+}
+
+/* Edit Account */
+
+ul.sidenav-list li{
+    padding: 5px 15px;
+    font-size: 17px;
+}
+
+ul.sidenav-list li.active{
+    font-weight: bold;
+}

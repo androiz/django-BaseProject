@@ -1,0 +1,37 @@
+"""untitled1 URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.10/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.conf.urls import url, include
+    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+"""
+from SocialLanguage import settings
+from django.conf.urls import url
+from django.contrib import admin
+from django.contrib.auth.decorators import login_required
+from django.conf.urls.static import static
+
+from social_language.views import Home, SignUp, Login, Logout, MyAccount, EditProfile, ChangeImage, ChangePassword
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', Home.as_view()),
+
+    url(r'^my_account/$', login_required(MyAccount.as_view())),
+    url(r'^edit_profile/$', login_required(EditProfile.as_view())),
+    url(r'^change_image/$', login_required(ChangeImage.as_view())),
+    url(r'^change_password/$', login_required(ChangePassword.as_view())),
+
+    url(r'^sign_up/$', SignUp.as_view()),
+    url(r'^login/$', Login.as_view()),
+    url(r'^logout/$', login_required(Logout.as_view())),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

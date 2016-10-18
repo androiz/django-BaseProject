@@ -1,0 +1,54 @@
+{% extends "edit_account.html" %}
+{% load staticfiles%}
+
+{% block title %}Change Image{% endblock %}
+
+{% block edit_account_content %}
+<div class="col-md-9">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}">  <!-- singular -->
+                <a class="close" data-dismiss="alert">×</a>
+                {{ message|safe }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="panel space-4">
+        <div class="panel-header">
+          Imagen
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form method="post" action="/change_image/" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+
+                    <label class="control-label">Select File</label>
+                    <input id="avatar" name="avatar" type="file" class="file file-loading" data-allowed-file-extensions='["png", "jpg", "jpeg"]'>
+
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-danger btn-lg">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{% if profile.avatar %}
+<script>
+$("#avatar").fileinput({
+    initialPreview: [
+        // IMAGE RAW MARKUP
+        '<img src="{{ MEDIA_URL }}{{ profile.avatar }}" class="kv-preview-data file-preview-image" style="height:160px">',
+    ],
+});
+</script>
+{% endif %}
+{% endblock %}

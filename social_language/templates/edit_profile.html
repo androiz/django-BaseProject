@@ -1,0 +1,57 @@
+{% extends "edit_account.html" %}
+{% load staticfiles%}
+
+{% block title %}My Account{% endblock %}
+
+{% block edit_account_content %}
+<div class="col-md-9">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}">  <!-- singular -->
+                <a class="close" data-dismiss="alert">×</a>
+                {{ message|safe }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="panel space-4">
+        <div class="panel-header">
+          Obligatorio
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form action="/edit_account/" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls {% if first_name %}floating-label-form-group-with-value{% endif %}">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name" id="name" name="name" value="{{ first_name }}" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls {% if last_name %}floating-label-form-group-with-value{% endif %}">
+                            <label>Surname</label>
+                            <input type="text" class="form-control" placeholder="Surname" id="surname" name="surname" value="{{ last_name }}" required data-validation-required-message="Please enter your surname.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls {% if email %}floating-label-form-group-with-value{% endif %}">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="{{ email }}" required data-validation-required-message="Please enter your email address.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-danger btn-lg">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
