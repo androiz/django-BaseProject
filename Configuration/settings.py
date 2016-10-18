@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_language',
+    'base_project',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SocialLanguage.urls'
+ROOT_URLCONF = 'Configuration.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SocialLanguage.wsgi.application'
+WSGI_APPLICATION = 'Configuration.wsgi.application'
 
 
 # Database
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'SocialLanguage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'SocialLanguage/../db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'Configuration/../db.sqlite3'),
     }
 }
 
@@ -89,7 +89,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
 AUTHENTICATION_BACKENDS = [
-    'social_language.backend.UserModelEmailBackend',    # Login w/ email
+    'base_project.backend.UserModelEmailBackend',    # Login w/ email
     'django.contrib.auth.backends.ModelBackend',    # Login w/ username
 ]
 

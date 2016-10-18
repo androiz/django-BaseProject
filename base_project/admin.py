@@ -1,5 +1,5 @@
 from django.contrib import admin
-from social_language.models import UserProfile
+from base_project.models import UserProfile
 
 # Register your models here.
 

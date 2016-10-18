@@ -13,13 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from SocialLanguage import settings
+from Configuration import settings
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.conf.urls.static import static
 
-from social_language.views import Home, SignUp, Login, Logout, MyAccount, EditProfile, ChangeImage, ChangePassword
+from base_project.views import Home, SignUp, Login, Logout, MyAccount, EditProfile, ChangeImage, ChangePassword
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

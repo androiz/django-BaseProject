@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class SocialLanguageConfig(AppConfig):
-    name = 'social_language'
+    name = 'base_project'
