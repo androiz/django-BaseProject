@@ -29,7 +29,7 @@ Finally, the superuser is not created with a user-extended profile, so you shoul
 for him manually. To do that, just go to 127.0.0.1/admin and create manually the user-profile record matching with
 the superuser.
 
-** Additional Information: **
+**Additional Information:**
 
 When users are registered in the web site, their active field is set up to False (because we are waiting for receiving
 an activation email) so that the superuser should activate manually to make them work.
