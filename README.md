@@ -26,7 +26,7 @@ Then, run the server with the next command:
 `python manage.py runserver`
 
 Finally, the superuser is not created with a user-extended profile, so you should create a basic user-profile
-for him manually. To do that, just go to 127.0.0.1/admin and create manually the user-profile record matching with
+for him manually. To do that, just go to **127.0.0.1/admin** and **create manually the user-profile** record matching with
 the superuser.
 
 **Additional Information:**
@@ -36,17 +36,17 @@ an activation email) so that the superuser should activate manually to make them
 
 ## Features
 
-- Theme: 
-  Start Bootstrap freelancer
+* Theme:
+  - Start Bootstrap freelancer
   
-- Front-end Libraries & Frameworks:
-  Bootstrap
-  Bootstrap-datepicker
-  Fileinput
-  jquery.js
+* Front-end Libraries & Frameworks:
+  - Bootstrap
+  - Bootstrap-datepicker
+  - Fileinput
+  - jquery.js
 
-- Database:
-  sqLite3 (If you want to change it, you just need to set up the new one and make a migration)
+* Database:
+  - sqLite3 (If you want to change it, you just need to set up the new one and make a migration)
   
 
 ## Contributors
