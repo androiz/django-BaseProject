@@ -3,9 +3,9 @@ This project is a django base-project. It's useful so as to start a project beca
 developed a module for signup & login with an user-extended profile. Functionalities in the project 
 include: 
 
-- A signup/login system.
-- An user profile with avatar.
-- A user-friendly interface based on Boostrap.
+* A signup/login system.
+* An user profile with avatar.
+* A user-friendly interface based on Boostrap.
 
 ## Installation
 
@@ -15,9 +15,24 @@ Afterwards, you just have to load the virtualenv and type the command below:
 
 `pip install -r requirements.txt`
 
+Then, you will need a user-admin so you have to run the command:
+
+`python manage.py createsuperuser`
+
+(Signup is based on the email address so I recommend setting up the username with the same email address too)
+
 Then, run the server with the next command:
 
 `python manage.py runserver`
+
+Finally, the superuser is not created with a user-extended profile, so you should create a basic user-profile
+for him manually. To do that, just go to 127.0.0.1/admin and create manually the user-profile record matching with
+the superuser.
+
+** Additional Information: **
+
+When users are registered in the web site, their active field is set up to False (because we are waiting for receiving
+an activation email) so that the superuser should activate manually to make them work.
 
 ## Features
 
