@@ -1,2 +1,11 @@
 - Theme:
-    Start Bootstrap freelancer
+  Start Bootstrap freelancer
+
+- Front-end Libraries & Frameworks:
+  Bootstrap
+  Bootstrap-datepicker
+  Fileinput
+  jquery.js
+
+- Database:
+  sqLite3 (If you want to change it, you just need to set up the new one and make a migration)
